@@ -51,10 +51,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'todo_project.wsgi.application'
 
+# Create databases directory if it doesn't exist
+DATABASES_DIR = os.path.join(BASE_DIR, 'databases')
+os.makedirs(DATABASES_DIR, exist_ok=True)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'databases/default.db',
+        'NAME': os.path.join(DATABASES_DIR, 'default.db'),
     }
 }
 
