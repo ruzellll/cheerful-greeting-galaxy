@@ -15,9 +15,8 @@ interface Task {
 
 type FilterType = "all" | "completed" | "uncompleted";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "http://localhost:8000/api"; // Updated port to match Django
 
-// Generate or retrieve device ID
 const getDeviceId = () => {
   let deviceId = localStorage.getItem('deviceId');
   if (!deviceId) {
